@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "build": "npm run clean && tsc",
+    "build": "npm install",
     "clean": "rm -rf dist",
     "prod": "NODE_ENV=production node app.js",
     "init-db": "node src/scripts/initDb.js"
