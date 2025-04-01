@@ -6,7 +6,7 @@ async function init() {
     await User.createTable();
     
     console.log('Seeding database...');
-    await User.seedDatabase(100);  // Starting with 100 users for testing
+    await User.seedDatabase(10);  // Starting with 100000 users for testing
     
     console.log('Database initialized successfully!');
     process.exit(0);
