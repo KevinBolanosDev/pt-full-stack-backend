@@ -5,7 +5,7 @@ dotenv.config();
 
 const { Pool } = pkg
 
-if (!process.env.DATABASE_URL_PRODUCTION) {
+if (!process.env.DATABASE_URL) {
     console.error("Error: La variable de entorno no está definida.");
     process.exit(1);
 }
@@ -15,7 +15,7 @@ if (!process.env.DATABASE_URL_PRODUCTION) {
     process.exit(1);
 } */
 
-const connectionString = process.env.DATABASE_URL_PRODUCTION;
+const connectionString = process.env.DATABASE_URL;
 
 export const dbPool = new Pool({
     allowExitOnIdle: true,
