@@ -15,7 +15,7 @@ const corsOptions = {
     const allowedOrigins = [
       process.env.FRONTEND_URL,
       'https://pt-full-stack-frontend.netlify.app',
-      'http://localhost:3000' // Para desarrollo local
+      'http://localhost:3005/api' // Para desarrollo local
     ];
     
     if (!origin || allowedOrigins.includes(origin)) {

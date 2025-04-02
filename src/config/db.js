@@ -15,7 +15,7 @@ const connectionString = process.env.DATABASE_URL;
 export const dbPool = new Pool({
     allowExitOnIdle: true,
     connectionString,
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    ssl: { rejectUnauthorized: false },
 });
 
 const initializeDB = async () => {
