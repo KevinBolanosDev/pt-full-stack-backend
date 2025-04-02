@@ -3,18 +3,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const { Pool } = pkg
-
-if (!process.env.DATABASE_URL) {
-    console.error("Error: La variable de entorno no está definida.");
-    process.exit(1);
-}
-
-const connectionString = process.env.DATABASE_URL;
+const { Pool } = pkg;
 
 export const dbPool = new Pool({
-    allowExitOnIdle: true,
-    connectionString,
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
     ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
