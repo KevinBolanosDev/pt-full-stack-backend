@@ -20,6 +20,6 @@ app.use(cors(
 
 app.use('/api', usersRoutes);
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server listening on the port http://localhost:${PORT}`);
 });
