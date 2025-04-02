@@ -5,17 +5,17 @@ import usersRoutes from './src/routes/users.routes.js';
 import { PORT } from './config.js'
 
 const app = express();
+// Configuración de CORS
+app.use(
+    cors({
+        origin: process.env.FRONTED_URL,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true,
+    })
+);
 
 // Middleware
 app.use(express.json());
-
-app.use(cors(
-    {
-        origin: process.env.FRONTED_URL,
-        credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    }
-));
 
 // app.use('/api', testRouter); // Prueba de ruta
 
